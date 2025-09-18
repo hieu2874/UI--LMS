@@ -1,0 +1,55 @@
+.newsletter {
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    width: 1490px;
+    height: 164px;
+    &-block {
+        width: 1346px;
+        height: 68px;
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;      
+        gap: 20px;            
+    }
+    &-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    &-title {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0px;
+        color: rgba(1, 78, 114, 1);
+    }
+    &-desc {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0px;
+    }
+    &-search {
+        width: 577px;
+        height: 68px;
+        border-radius: 50px;
+        align-items: center;
+        border: 1px solid rgba(222, 226, 230, 1);
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 2px 6px rgba(27, 60, 108, 0.16);
+    }
+    &-email {
+        border: none;
+        outline: none;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        border-radius: 30px;
+        margin-left: 20px;
+    }
+}
