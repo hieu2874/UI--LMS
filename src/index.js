@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-  
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fontsource/noto-sans-jp"; // mặc định 400
+import "@fontsource/noto-sans-jp/500.css"; // thêm weight 500
+import "@fontsource/noto-sans-jp/700.css"; // thêm weight 700
+
 
 
 

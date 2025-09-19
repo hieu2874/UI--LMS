@@ -11,6 +11,7 @@ body {
   font-size: 16px;
   line-height: 1;
   background-color: rgba(235, 249, 255, 1);
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 img {
@@ -76,6 +77,10 @@ ul {
     }
   }
 }
+section,
+footer {
+  display: none !important;
+}
 /* import partials (file partial đặt cùng folder) */
 @import "footer";
 @import "header";
@@ -83,4 +88,5 @@ ul {
 @import "feature";
 @import "course";
 @import "newsletter";
+@import "footers";
 

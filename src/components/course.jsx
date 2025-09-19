@@ -22,19 +22,18 @@ function Course() {
           spaceBetween={20}
           slidesPerView={3.5}
           pagination={{ clickable: true }}
-
         >
           {courses.map((course) => (
             <SwiperSlide key={course.id}>
               <div className="course-card">
                 <div className="course-image">
                   <img src={course.image} alt={course.title} />
-                  {course.status && (
+                  {/* {course.status && (
                     <span className="course-badge finished">{course.status}</span>
                   )}
                   {course.offer && (
                     <span className="course-badge offer">{course.offer}</span>
-                  )}
+                  )} */}
                 </div>
                 <div className="course-progress">
                   <div className="course-progress-bar">
@@ -42,9 +41,9 @@ function Course() {
                       className="course-progress-dot"
                       style={{ width: `${course.progress}%` }}
                     ></div>
-                    <div className="course-avatar">
+                    {/* <div className="course-avatar">
                       <img src={course.avatar} alt={course.author} className="author-avatar" />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 

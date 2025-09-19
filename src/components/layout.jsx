@@ -5,6 +5,7 @@ import Feature from "./feature";
 import Course from "./course";
 import Newsletter from "./newsletter";
 import Footer from "./footer";
+import Footers from "./footers";
 
 
 function Layout() {
@@ -16,6 +17,7 @@ function Layout() {
       <Course />
       <Newsletter/>
       <Footer/>
+      <Footers/>
     </div>
   );
 }
