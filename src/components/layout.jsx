@@ -6,6 +6,8 @@ import Course from "./course";
 import Newsletter from "./newsletter";
 import Footer from "./footer";
 import Footers from "./footers";
+import { features } from "../mocks/features.mock";
+import { courses } from "../mocks/courses.mock";
 
 
 function Layout() {
@@ -13,11 +15,11 @@ function Layout() {
     <div className="App">
       <Header />
       <Banner />
-      <Feature />
-      <Course />
       <Newsletter/>
       <Footer/>
       <Footers/>
+      <Feature data={features} />
+      <Course data={courses} />
     </div>
   );
 }

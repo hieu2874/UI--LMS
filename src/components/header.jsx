@@ -1,4 +1,6 @@
+import { useState } from "react";
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="header">
       <div className="header-box">
@@ -11,7 +13,7 @@ function Header() {
         </h1>
       </div>
      
-      <div className="header-menu">
+      <div className={`header-menu ${isOpen ? "is-open" : ""}`}>
         <a href="#" className="button button--categories">Categories</a>
         <ul className="header-menu-item">
           <li className="menu-item-list"><a href="#" className="menu-link">Home</a></li>
@@ -25,6 +27,11 @@ function Header() {
       <div className="header-auth">
         <a href="#" className="button button--ourline">Login</a>
         <a href="#" className="button button--primary">Register</a>
+      </div>
+      <div className="header-hamburger"onClick={() => setIsOpen(!isOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </header>
   );
