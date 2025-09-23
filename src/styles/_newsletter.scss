@@ -65,7 +65,7 @@
     }
 }
 
-/* Tablet */
+
 @media screen and (max-width: 1024px) {
   .newsletter {
     height: auto;
@@ -92,13 +92,13 @@
   }
 }
 
-/* Mobile */
+
 @media screen and (max-width: 780px) {
   .newsletter {
     height: auto;
 
     &-block {
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       text-align: center;
       gap: 20px;
@@ -106,12 +106,12 @@
 
     &-search {
       width: 100%;
-      max-width: 500px;
+      max-width: 300px;
     }
   }
 }
 
-/* Small mobile */
+
 @media screen and (max-width: 480px) {
   .newsletter {
     &-title {

@@ -4,7 +4,9 @@ function CourseCard({ id, title, description, author, image, date, time }) {
 const [hasInteracted, setHasInteracted] = useState(false);
   useEffect(() => {
     const saved = localStorage.getItem(`course-liked-${id}`);
-    if  (saved === "true") { setLiked(true);
+    if  (saved === "true") { 
+      setLiked(true);
+      setHasInteracted(true);
   }
   }, [id]);
 
