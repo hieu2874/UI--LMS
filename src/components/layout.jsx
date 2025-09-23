@@ -1,14 +1,11 @@
 import React from "react";
 import Header from "./header";
 import Banner from "./banner";
-import Feature from "./feature";
-import Course from "./course";
 import Newsletter from "./newsletter";
 import Footer from "./footer";
 import Footers from "./footers";
-import { features } from "../mocks/features.mock";
-import { courses } from "../mocks/courses.mock";
-
+import Feature from "./feature";
+import Course from "./course";
 
 function Layout() {
   return (
@@ -18,8 +15,9 @@ function Layout() {
       <Newsletter/>
       <Footer/>
       <Footers/>
-      <Feature data={features} />
-      <Course data={courses} />
+      <Course />
+      <Feature />
+      
     </div>
   );
 }

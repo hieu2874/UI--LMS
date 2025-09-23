@@ -1,10 +1,12 @@
-import FeatureItem from "./FeatureItem";
+import { features } from "../data/features";
+import FeatureItem from "./featureItem";
 
-function Feature({ data }) {
+function Feature() 
+{
   return (
     <section className="feature">
       <div className="feature-block">
-        {data.map((item) => (
+        {features.map((item) => (
           <FeatureItem key={item.id} {...item} />
         ))}
       </div>
