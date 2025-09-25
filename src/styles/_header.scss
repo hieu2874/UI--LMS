@@ -151,4 +151,17 @@
   }
  }
 }
+.header-search-box {
+  display: flex;
+  align-items: center;       /* căn giữa theo chiều dọc */
+  text-align: center;
+  flex-direction: column;
+  input {
+    border: 1px solid rgba(222, 226, 230, 1);
+    border-radius: 20px;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 1);
+    padding: 6px 20px;
+  }
+}
 

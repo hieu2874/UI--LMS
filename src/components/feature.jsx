@@ -1,8 +1,12 @@
 import { features } from "../data/features";
 import FeatureItem from "./featureItem";
 
-function Feature() 
+function Feature({ query }) 
 {
+  const filteredFeatures = features.filter((item)=>
+    item.subtitle.toLowerCase().includes(query.toLowerCase()) ||
+    item.description.toLowerCase().includes(query.toLowerCase())
+  );
   return (
     <section className="feature">
       <div className="feature-block">
@@ -11,7 +15,7 @@ function Feature()
         ))}
       </div>
     </section>
-  );
+  );  
 }
 
 export default Feature;

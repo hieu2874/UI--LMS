@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 function CourseCard({ id, title, description, author, image, date, time }) {
-  const [liked, setLiked] = useState(false);
+const [liked, setLiked] = useState(false);
 const [hasInteracted, setHasInteracted] = useState(false);
   useEffect(() => {
     const saved = localStorage.getItem(`course-liked-${id}`);
