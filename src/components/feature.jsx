@@ -10,9 +10,13 @@ function Feature({ query })
   return (
     <section className="feature">
       <div className="feature-block">
-        {features.map((item) => (
-          <FeatureItem key={item.id} {...item} />
-        ))}
+        {filteredFeatures.length > 0 ? (
+          filteredFeatures.map((item) =>(
+            <FeatureItem key={item.id} {...item} />
+          ))
+        ) : (
+           <p>khong tim thay dich vu</p>
+        )}
       </div>
     </section>
   );  

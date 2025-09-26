@@ -6,7 +6,7 @@ import CourseCard from "./CourseCard";
 import { courses } from "../data/courses";
 
 
-function Course({query}) {
+function Course({query, onSelectCourse}) {
   const filteredCourses = courses.filter((course) =>
    course.title.toLowerCase().includes(query.toLowerCase()) ||
    course.description.toLowerCase().includes(query.toLowerCase()) ||
@@ -24,11 +24,11 @@ function Course({query}) {
           {filteredCourses.length > 0 ? (
             filteredCourses.map((course) => (
               <SwiperSlide key={course.id}>
-                <CourseCard {...course} />
+                <CourseCard {...course} onClick={() => onSelectCourse(course)} />
               </SwiperSlide>
             ))
           ) : (
-            <p>khong tim thay khoa hoc nao</p>
+            <p>khong tim thay khoa hoc  </p>
           )}
         </Swiper>
       </div>

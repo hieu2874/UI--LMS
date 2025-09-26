@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-function CourseCard({ id, title, description, author, image, date, time }) {
-const [liked, setLiked] = useState(false);
-const [hasInteracted, setHasInteracted] = useState(false);
+function CourseCard({ id, title, description, author, image, date, time, onClick }) {
+const [liked, setLiked] = useState(false); //trạng thái đã like
+const [hasInteracted, setHasInteracted] = useState(false); //đã từng like chưa
+  // khi load component -> kiểm tra localstorage để khôi phục trạng thái like
   useEffect(() => {
     const saved = localStorage.getItem(`course-liked-${id}`);
     if  (saved === "true") { 
@@ -18,7 +19,7 @@ const [hasInteracted, setHasInteracted] = useState(false);
   };
 
   return (
-    <div className={`course-card ${liked ? "liked" : ""}`}>
+    <div className={`course-card ${liked ? "liked" : ""}`} onClick={onClick}>
       <div className="course-image">
         <img src={image} alt={title} />
       </div>
@@ -37,8 +38,9 @@ const [hasInteracted, setHasInteracted] = useState(false);
           </div>
 
         </div>
+        {/* Nút like có stopPropagation để không mở modal khi ấn :3 */}
        <button
-          onClick={toggleLike}
+          onClick={(e) => {e.stopPropagation(); toggleLike();}}
           className={liked && hasInteracted ? "liked" : ""}
           aria-label={liked ? "Unlike" : "Like"}
         >

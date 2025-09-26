@@ -6,6 +6,8 @@ import Course from "./course";
 import Newsletter from "./newsletter";
 import Footer from "./footer";
 import Footers from "./footers";
+import Modal from "./Modal";
+
 import { features } from "../data/features";
 import { courses } from "../data/courses";
 
@@ -13,6 +15,7 @@ import { courses } from "../data/courses";
 
 function Layout() {
   const [query, setQuery] = useState("");
+  const [selectedCourse, setSelectedCourse] = useState(null);
   useEffect(() => {
     console.log("Query changed:", query);
   }, [query])
@@ -26,10 +29,15 @@ function Layout() {
       />
       <Banner />
       <Feature query={query} />
-      <Course query={query} />
+      <Course query={query} onSelectCourse={setSelectedCourse} />
       <Newsletter />
       <Footer />
       <Footers />
+      <Modal
+       isVisible={!!selectedCourse}
+       onClose={() => setSelectedCourse(null)} // đóng modal
+       course={selectedCourse}
+       />
     </div>
   );
 }
