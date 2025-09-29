@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 function FeatureItem({ icon, number, title, subtitle, description }) {
+  
   return (
     <div className="feature-box">
       <div className="icon">

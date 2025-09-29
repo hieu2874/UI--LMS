@@ -1,4 +1,5 @@
     function Footers() {
+        
         return (
             <section className="footers">
                 <div className="footers-block">

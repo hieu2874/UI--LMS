@@ -19,6 +19,24 @@ function Layout() {
   useEffect(() => {
     console.log("Query changed:", query);
   }, [query])
+
+  const [favorites, setFavorites] = useState(() => {
+    const saved = localStorage.getItem("favorites");
+    return saved ? JSON.parse(saved) : {};
+  });
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  },[favorites]);
+
+
+  const toggleFavorite = (id, type) => {
+  const key = `${type}-${id}`;
+  setFavorites((prev) => ({
+    ...prev,
+    [key]: !prev[key],
+  }));  
+};
+const favoritesCount = Object.values(favorites).filter(Boolean).length;
   return (
     <div className="App">
       <Header 
@@ -27,9 +45,16 @@ function Layout() {
       features = {features}
       courses = {courses}
       />
+      <h2 style={{textAlign: "center"}}> ❤️ Favorites: {favoritesCount}</h2>
       <Banner />
-      <Feature query={query} />
-      <Course query={query} onSelectCourse={setSelectedCourse} />
+      <Feature 
+      query={query} />
+      <Course
+       query={query} 
+       onSelectCourse={setSelectedCourse}
+       favorites = {favorites}
+       toggleFavorite = {toggleFavorite}
+        />
       <Newsletter />
       <Footer />
       <Footers />

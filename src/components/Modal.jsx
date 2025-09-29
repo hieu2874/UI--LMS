@@ -1,7 +1,6 @@
   import React, { useEffect, useRef } from "react";
   const Modal = ({ isVisible, onClose, course }) => {
     const modalRef = useRef(null); //tham chiếu đến nội dung modal để xử lí click outside
-    //Nếu click ra ngoài thì modal đóng
     const handleClickOutside = (Event) => {
       if (!modalRef.current) return;
 

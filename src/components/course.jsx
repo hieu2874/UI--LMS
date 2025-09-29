@@ -5,13 +5,13 @@ import "swiper/css/pagination";
 import CourseCard from "./CourseCard";
 import { courses } from "../data/courses";
 
-
-function Course({query, onSelectCourse}) {
+function Course({ query, onSelectCourse, favorites, toggleFavorite }) {
   const filteredCourses = courses.filter((course) =>
-   course.title.toLowerCase().includes(query.toLowerCase()) ||
-   course.description.toLowerCase().includes(query.toLowerCase()) ||
-   course.author.toLowerCase().includes(query.toLowerCase())
-);
+    course.title.toLowerCase().includes(query.toLowerCase()) ||
+    course.description.toLowerCase().includes(query.toLowerCase()) ||
+    course.author.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <section className="course">
       <div className="course-block">
@@ -24,7 +24,11 @@ function Course({query, onSelectCourse}) {
           {filteredCourses.length > 0 ? (
             filteredCourses.map((course) => (
               <SwiperSlide key={course.id}>
-                <CourseCard {...course} onClick={() => onSelectCourse(course)} />
+                <CourseCard {...course} onClick={() => 
+                onSelectCourse(course)} 
+                isFavorite={favorites [`course-${course.id}`] || false}
+                toggleFavorite = {() => toggleFavorite(course.id, "course")}
+                />
               </SwiperSlide>
             ))
           ) : (
