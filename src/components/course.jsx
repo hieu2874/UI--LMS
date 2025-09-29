@@ -5,12 +5,21 @@ import "swiper/css/pagination";
 import CourseCard from "./CourseCard";
 import { courses } from "../data/courses";
 
-function Course({ query, onSelectCourse, favorites, toggleFavorite }) {
-  const filteredCourses = courses.filter((course) =>
-    course.title.toLowerCase().includes(query.toLowerCase()) ||
-    course.description.toLowerCase().includes(query.toLowerCase()) ||
-    course.author.toLowerCase().includes(query.toLowerCase())
-  );
+function Course({ query = "", onSelectCourse, favorites = {}, toggleFavorite = () => {} }) {
+  // luôn đảm bảo query là string
+  const search = String(query).toLowerCase();
+
+  const filteredCourses = courses.filter((course) => {
+    const title = String(course?.title || "").toLowerCase();
+    const description = String(course?.description || "").toLowerCase();
+    const author = String(course?.author || "").toLowerCase();
+
+    return (
+      title.includes(search) ||
+      description.includes(search) ||
+      author.includes(search)
+    );
+  });
 
   return (
     <section className="course">
@@ -24,15 +33,16 @@ function Course({ query, onSelectCourse, favorites, toggleFavorite }) {
           {filteredCourses.length > 0 ? (
             filteredCourses.map((course) => (
               <SwiperSlide key={course.id}>
-                <CourseCard {...course} onClick={() => 
-                onSelectCourse(course)} 
-                isFavorite={favorites [`course-${course.id}`] || false}
-                toggleFavorite = {() => toggleFavorite(course.id, "course")}
+                <CourseCard
+                  {...course}
+                  onClick={() => onSelectCourse?.(course)}
+                  isFavorite={favorites[`course-${course.id}`] || false}
+                  toggleFavorite={() => toggleFavorite(course.id, "course")}
                 />
               </SwiperSlide>
             ))
           ) : (
-            <p>khong tim thay khoa hoc  </p>
+            <p>Không tìm thấy khóa học</p>
           )}
         </Swiper>
       </div>

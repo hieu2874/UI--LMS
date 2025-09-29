@@ -40,13 +40,13 @@ const favoritesCount = Object.values(favorites).filter(Boolean).length;
   return (
     <div className="App">
       <Header 
-      query={query} 
-      setQuery={setQuery}
       features = {features}
       courses = {courses}
       />
-      <h2 style={{textAlign: "center"}}> ❤️ Favorites: {favoritesCount}</h2>
-      <Banner />
+      <Banner 
+       query={query} 
+      setQuery={setQuery}
+      />
       <Feature 
       query={query} />
       <Course
@@ -62,6 +62,7 @@ const favoritesCount = Object.values(favorites).filter(Boolean).length;
        isVisible={!!selectedCourse}
        onClose={() => setSelectedCourse(null)} // đóng modal
        course={selectedCourse}
+       favoritesCount = {favoritesCount}
        />
     </div>
   );

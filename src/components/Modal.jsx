@@ -1,6 +1,6 @@
   import React, { useEffect, useRef } from "react";
-  const Modal = ({ isVisible, onClose, course }) => {
-    const modalRef = useRef(null); //tham chiếu đến nội dung modal để xử lí click outside
+  const Modal = ({ isVisible, onClose, course, favoritesCount }) => {
+    const modalRef = useRef(null); 
     const handleClickOutside = (Event) => {
       if (!modalRef.current) return;
 
@@ -8,7 +8,7 @@
         onClose();
       }
     };
-    useEffect(() => {      // gắn sự kiện lắng nge hay con đc gọi là click của người dùng
+    useEffect(() => {      
       if (isVisible) {
         document.addEventListener("mousedown", handleClickOutside);
       }
@@ -32,6 +32,9 @@
             <p><strong>Date:</strong> {course.date}</p>
             <p><strong>Time:</strong> {course.time}</p>
           </div>
+          <div style={{ marginTop: "10px", fontWeight: "bold" }}>
+          ❤️ Tổng số lượt thích: {favoritesCount}
+        </div>
         </div>
       </div>
     )
