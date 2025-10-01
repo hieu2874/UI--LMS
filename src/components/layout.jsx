@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { LmsProvider } from "./LmsContext";
 import Header from "./header";
 import Banner from "./banner";
 import Feature from "./feature";
@@ -11,60 +12,20 @@ import Modal from "./Modal";
 import { features } from "../data/features";
 import { courses } from "../data/courses";
 
-
-
 function Layout() {
-  const [query, setQuery] = useState("");
-  const [selectedCourse, setSelectedCourse] = useState(null);
-  useEffect(() => {
-    console.log("Query changed:", query);
-  }, [query])
-
-  const [favorites, setFavorites] = useState(() => {
-    const saved = localStorage.getItem("favorites");
-    return saved ? JSON.parse(saved) : {};
-  });
-  useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  },[favorites]);
-
-
-  const toggleFavorite = (id, type) => {
-  const key = `${type}-${id}`;
-  setFavorites((prev) => ({
-    ...prev,
-    [key]: !prev[key],
-  }));  
-};
-const favoritesCount = Object.values(favorites).filter(Boolean).length;
   return (
-    <div className="App">
-      <Header 
-      features = {features}
-      courses = {courses}
-      />
-      <Banner 
-       query={query} 
-      setQuery={setQuery}
-      />
-      <Feature 
-      query={query} />
-      <Course
-       query={query} 
-       onSelectCourse={setSelectedCourse}
-       favorites = {favorites}
-       toggleFavorite = {toggleFavorite}
-        />
-      <Newsletter />
-      <Footer />
-      <Footers />
-      <Modal
-       isVisible={!!selectedCourse}
-       onClose={() => setSelectedCourse(null)} // đóng modal
-       course={selectedCourse}
-       favoritesCount = {favoritesCount}
-       />
-    </div>
+    <LmsProvider>
+      <div className="App">
+        <Header />
+        <Banner />
+        <Feature />
+        <Course />
+        <Newsletter />
+        <Footer />
+        <Footers />
+        <Modal />
+      </div>
+    </LmsProvider>
   );
 }
 

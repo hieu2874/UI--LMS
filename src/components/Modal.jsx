@@ -1,11 +1,20 @@
   import React, { useEffect, useRef } from "react";
-  const Modal = ({ isVisible, onClose, course, favoritesCount }) => {
-    const modalRef = useRef(null); 
-    const handleClickOutside = (Event) => {
+import { useLmsContext } from "./LmsContext";
+  const Modal = () => {
+    const {
+      selectedItem: course,
+      setSelectedItem: setCourse,
+      favoritesCount,
+    } = useLmsContext();
+    
+    const isVisible = !!course;
+    const modalRef = useRef(null);
+
+    const handleClickOutside = (e) => {
       if (!modalRef.current) return;
 
-      if (EventTarget instanceof Node && !modalRef.current.contains(EventTarget)) {
-        onClose();
+      if (!modalRef.current.contains(e.target)) {
+        setCourse(null);
       }
     };
     useEffect(() => {      
@@ -18,10 +27,11 @@
     }, [isVisible]);
 
     if (!isVisible || !course) return null;
+    
     return (
       <div className="modal-backdrop">
         <div className="modal-content"  ref={modalRef}>
-          <button onClick={onClose}>X</button>
+          <button onClick={() => setCourse(null)}>x</button>
           <div className="modal-card">
             <h2>{course.title}</h2>
             <div className="modal-author">

@@ -5,19 +5,22 @@ import Layout from './components/layout';
 import CoursePage from './components/CoursePage';
 import CourseDetail from './components/CourseDetail';
 import NotFound from './components/NotFound';
+import { LmsProvider } from "./components/LmsContext";
 
 
 
 function App() {
   return (
-   <Router>
-      <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route path="/courses" element={<CoursePage />} />
-        <Route path="/courses/:id" element={<CourseDetail />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
+    <LmsProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />} />
+          <Route path="/courses" element={<CoursePage />} />
+          <Route path="/courses/:id" element={<CourseDetail />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
+    </LmsProvider>
   );
 }
 

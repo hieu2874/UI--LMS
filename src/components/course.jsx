@@ -4,8 +4,18 @@ import "swiper/css";
 import "swiper/css/pagination";
 import CourseCard from "./CourseCard";
 import { courses } from "../data/courses";
+import { useLmsContext } from "./LmsContext";
 
-function Course({ query = "", onSelectCourse, favorites = {}, toggleFavorite = () => {} }) {
+function Course() {
+  const {
+    query,
+    favorites,
+    toggleFavorite,
+    setSelectedItem
+  } = useLmsContext();
+
+
+
   // luôn đảm bảo query là string
   const search = String(query).toLowerCase();
 
@@ -35,8 +45,8 @@ function Course({ query = "", onSelectCourse, favorites = {}, toggleFavorite = (
               <SwiperSlide key={course.id}>
                 <CourseCard
                   {...course}
-                  onClick={() => onSelectCourse?.(course)}
-                  isFavorite={favorites[`course-${course.id}`] || false}
+                  onClick={() => setSelectedItem(course)}
+                  isFavorite={favorites[`course-${course.id}`]} 
                   toggleFavorite={() => toggleFavorite(course.id, "course")}
                 />
               </SwiperSlide>

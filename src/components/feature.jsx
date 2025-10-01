@@ -1,7 +1,11 @@
 import { features } from "../data/features";
 import FeatureItem from "./featureItem";
+import { useLmsContext } from "./LmsContext";
 
-function Feature({ query }) {
+function Feature() {
+
+  const { query } = useLmsContext();
+
   const filteredFeatures = features.filter((item)=>
     item.subtitle.toLowerCase().includes(query.toLowerCase()) ||
     item.description.toLowerCase().includes(query.toLowerCase())
