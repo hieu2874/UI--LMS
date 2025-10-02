@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
+import { useLmsContext } from "./LmsContext";
 
 function CourseCard({ id, title, description, author, image, date, time, onClick, isFavorite, toggleFavorite }) {
+  const { clearFavorites, favoritesCount} = useLmsContext();
+
   return (
     <div className={`course-card ${isFavorite ? "liked" : ""}`} onClick={onClick}>
       <div className="course-image">
@@ -20,13 +23,14 @@ function CourseCard({ id, title, description, author, image, date, time, onClick
             <span className="date">{date}</span>
           </div>
         </div>
-       <button
-          onClick={(e) => {e.stopPropagation(); toggleFavorite();}}
+        <button
+          onClick={(e) => { e.stopPropagation(); toggleFavorite(); }}
           className={isFavorite ? "liked" : ""}
           aria-label={isFavorite ? "Unlike" : "Like"}
         >
           {isFavorite ? "❤️" : "♡"}
         </button>
+        <button onClick={clearFavorites}>🗑 Xóa tất cả ({favoritesCount})</button>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 function Footer() {
-   
     return (
         <section className="footer">
             <div className="footer-block">
@@ -11,7 +10,6 @@ function Footer() {
             </div>
         </section>
     )
-
 }
 
 export default Footer;

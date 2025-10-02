@@ -1,18 +1,17 @@
-  import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useLmsContext } from "./LmsContext";
-  const Modal = () => {
+
+const Modal = () => {
     const {
       selectedItem: course,
       setSelectedItem: setCourse,
       favoritesCount,
     } = useLmsContext();
-    
     const isVisible = !!course;
     const modalRef = useRef(null);
 
     const handleClickOutside = (e) => {
       if (!modalRef.current) return;
-
       if (!modalRef.current.contains(e.target)) {
         setCourse(null);
       }

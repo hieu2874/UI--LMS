@@ -65,6 +65,7 @@ function CourseList() {
                   onClick={() => setSelectedItem(course)}
                   isFavorite={favorites[`course-${course.id}`]}
                   toggleFavorite={() => toggleFavorite(course.id, "course")}
+                  
                 />
               </SwiperSlide>
             ))

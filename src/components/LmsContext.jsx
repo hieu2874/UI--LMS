@@ -1,12 +1,30 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useReducer, useState, useEffect } from "react";
 const LmsContext = createContext();
+
+
+function favoritesReducer (state, action) {
+    switch  (action.type) {
+        case "TOGGLE_FAVORITE": {
+            const key = `${action.payload.type}-${action.payload.id}`;
+            return {
+                ...state,
+                [key]: !state[key],
+            };
+        }
+        case "CLEAR_FAVORITES": 
+            return {};
+        case "LOAD_FAVORITES":
+            return action.payload || {};
+        default:
+            return state;
+    }
+}
 
 export function LmsProvider({ children }) {
     const [query, setQuery] = useState("");
     const [selectedItem, setSelectedItem] = useState(null);
 
-
-    const [favorites, setFavorites] = useState(() => {
+    const [favorites, dispatch] = useReducer(favoritesReducer, {}, () => {
         const saved = localStorage.getItem("favorites");
         return saved ? JSON.parse(saved) : {};
     });
@@ -14,13 +32,12 @@ export function LmsProvider({ children }) {
     useEffect(() => {
         localStorage.setItem("favorites", JSON.stringify(favorites));
     },[favorites]);
-     
+
     const toggleFavorite = (id, type) => {
-        const key = `${type}-${id}`;
-        setFavorites((prev) => ({
-            ...prev,
-            [key]: !prev[key],
-        }));
+        dispatch({type: "TOGGLE_FAVORITE", payload: {id, type} });
+    };
+    const clearFavorites = () => {
+        dispatch({type: "CLEAR_FAVORITES"});
     };
 
     const favoritesCount = Object.values(favorites).filter(Boolean).length;
@@ -34,6 +51,7 @@ export function LmsProvider({ children }) {
             setSelectedItem,
             favorites,
             toggleFavorite,
+            clearFavorites,
             favoritesCount,
          }}
         >
@@ -42,6 +60,6 @@ export function LmsProvider({ children }) {
     );
 }
 
-export function useLmsContext() {
+export function useLmsContext() {   
     return useContext(LmsContext);
 }
