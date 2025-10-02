@@ -3,7 +3,7 @@ import { LmsProvider } from "./LmsContext";
 import Header from "./header";
 import Banner from "./banner";
 import Feature from "./feature";
-import Course from "./course";
+import CourseList from './CourseList';
 import Newsletter from "./newsletter";
 import Footer from "./footer";
 import Footers from "./footers";
@@ -19,7 +19,7 @@ function Layout() {
         <Header />
         <Banner />
         <Feature />
-        <Course />
+        <CourseList/>
         <Newsletter />
         <Footer />
         <Footers />

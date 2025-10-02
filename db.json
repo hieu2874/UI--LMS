@@ -1,0 +1,70 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "author": "My Nguyen",
+      "title": "スポンジケーキを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月18日",
+      "image": "/image/left6.png"
+    },
+    {
+      "id": 2,
+      "author": "Thanh Tu",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+    {
+      "id": 3,
+      "author": "Thanh Tu",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+    {
+      "id": 4,
+      "author": "Thanh Tu",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    }
+  ],
+  "features": [
+    {
+      "id": 1,
+      "icon": "/image/Left.png",
+      "number": 0,
+      "subtitle": "熟練した講師",
+      "description": "経験豊富な講師が学びを支援します。"
+    },
+    {
+      "id": 2,
+      "icon": "/image/Left1.png",
+      "number": 12,
+      "subtitle": "満足している学生",
+      "description": "私たちのコースを通じて、スキルを身につけます。"
+    },
+    {
+      "id": 3,
+      "icon": "/image/Left2.png",
+      "number": 2,
+      "subtitle": "熟練した講師",
+      "description": "経験豊富な講師が学びを支援します。"
+    },
+    {
+      "id": 4,
+      "icon": "/image/Left3.png",
+      "number": 6,
+      "subtitle": "ビデオコース",
+      "description": "簡単にアクセス可能な動画学習コンテンツ。"
+    }
+  ]
+}

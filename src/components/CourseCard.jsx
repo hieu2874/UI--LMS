@@ -20,7 +20,6 @@ function CourseCard({ id, title, description, author, image, date, time, onClick
             <span className="date">{date}</span>
           </div>
         </div>
-        {/* NĂºt like cĂ³ stopPropagation Ä‘á»ƒ khĂ´ng má»Ÿ modal khi áº¥n :3 */}
        <button
           onClick={(e) => {e.stopPropagation(); toggleFavorite();}}
           className={isFavorite ? "liked" : ""}
