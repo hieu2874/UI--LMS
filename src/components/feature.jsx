@@ -1,3 +1,5 @@
+
+
 import { features } from "../data/features";
 import FeatureItem from "./featureItem";
 import { useLmsContext } from "./LmsContext";
@@ -10,7 +12,7 @@ function Feature() {
     item.subtitle.toLowerCase().includes(query.toLowerCase()) ||
     item.description.toLowerCase().includes(query.toLowerCase())
   );
-  
+
   return (
     <section className="feature">
       <div className="feature-block">

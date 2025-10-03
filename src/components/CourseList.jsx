@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -44,6 +44,13 @@ function CourseList() {
       author.includes(search)
     );
   });
+  const handleSelect = useCallback((course) => {
+    setSelectedItem(course);
+  },[setSelectedItem]);
+  const handleToggleFavorite = useCallback((id) => {
+    toggleFavorite(id, "course");
+
+  },[toggleFavorite]);  
 
   if (loading) return <p>⏳ Đang tải khóa học...</p>;
   if (error) return <p style={{ color: "red" }}>❌ {error}</p>;

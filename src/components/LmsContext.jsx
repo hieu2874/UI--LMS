@@ -1,9 +1,8 @@
 import { createContext, useContext, useReducer, useState, useEffect } from "react";
 const LmsContext = createContext();
 
-
-function favoritesReducer (state, action) {
-    switch  (action.type) {
+function favoritesReducer(state, action) {
+    switch (action.type) {
         case "TOGGLE_FAVORITE": {
             const key = `${action.payload.type}-${action.payload.id}`;
             return {
@@ -11,7 +10,7 @@ function favoritesReducer (state, action) {
                 [key]: !state[key],
             };
         }
-        case "CLEAR_FAVORITES": 
+        case "CLEAR_FAVORITES":
             return {};
         case "LOAD_FAVORITES":
             return action.payload || {};
@@ -28,38 +27,38 @@ export function LmsProvider({ children }) {
         const saved = localStorage.getItem("favorites");
         return saved ? JSON.parse(saved) : {};
     });
-    
+
     useEffect(() => {
         localStorage.setItem("favorites", JSON.stringify(favorites));
-    },[favorites]);
+    }, [favorites]);
 
     const toggleFavorite = (id, type) => {
-        dispatch({type: "TOGGLE_FAVORITE", payload: {id, type} });
+        dispatch({ type: "TOGGLE_FAVORITE", payload: { id, type } });
     };
     const clearFavorites = () => {
-        dispatch({type: "CLEAR_FAVORITES"});
+        dispatch({ type: "CLEAR_FAVORITES" });
     };
 
     const favoritesCount = Object.values(favorites).filter(Boolean).length;
 
     return (
         <LmsContext.Provider
-         value={{
-            query,
-            setQuery,
-            selectedItem,
-            setSelectedItem,
-            favorites,
-            toggleFavorite,
-            clearFavorites,
-            favoritesCount,
-         }}
+            value={{
+                query,
+                setQuery,
+                selectedItem,
+                setSelectedItem,
+                favorites,
+                toggleFavorite,
+                clearFavorites,
+                favoritesCount,
+            }}
         >
             {children}
         </LmsContext.Provider>
     );
 }
 
-export function useLmsContext() {   
+export function useLmsContext() {
     return useContext(LmsContext);
 }

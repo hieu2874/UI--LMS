@@ -1,8 +1,23 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import { useLmsContext } from "./LmsContext";
 
-function CourseCard({ id, title, description, author, image, date, time, onClick, isFavorite, toggleFavorite }) {
-  const { clearFavorites, favoritesCount} = useLmsContext();
+const CourseCard = React.memo(function CourseCard({
+  id,
+  title,
+  description,
+  author,
+  image,
+  date,
+  time,
+  onClick,
+  isFavorite,
+  toggleFavorite
+}) {
+  
+  console.log("Render CourseCard:", id);
+
+  const { clearFavorites, favoritesCount } = useLmsContext();
+
 
   return (
     <div className={`course-card ${isFavorite ? "liked" : ""}`} onClick={onClick}>
@@ -34,7 +49,7 @@ function CourseCard({ id, title, description, author, image, date, time, onClick
       </div>
     </div>
   );
-}
+});
 
 export default CourseCard;
 
