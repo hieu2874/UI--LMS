@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
+
 import "swiper/css/pagination";
 import CourseCard from "./CourseCard";
 import { useLmsContext } from "./LmsContext";
@@ -30,7 +31,7 @@ function CourseList() {
   }, []);
 
   // Luôn đảm bảo query là string và chuyển sang lowercase
-  const search = String(query).toLowerCase();
+  const search = String(query || "").toLowerCase();
 
   // Lọc khóa học theo query
   const filteredCourses = courses.filter((course) => {
@@ -70,7 +71,7 @@ function CourseList() {
                 <CourseCard
                   {...course}
                   onClick={() => setSelectedItem(course)}
-                  isFavorite={favorites[`course-${course.id}`]}
+                  isFavorite={favorites?.[`course-${course.id}`] || false}
                   toggleFavorite={() => toggleFavorite(course.id, "course")}
                   
                 />

@@ -1,5 +1,5 @@
 import React from "react";
-import { useLmsContext } from "./LmsContext";
+
 
 const CourseCard = React.memo(function CourseCard({
   id,
@@ -16,7 +16,7 @@ const CourseCard = React.memo(function CourseCard({
   
   console.log("Render CourseCard:", id);
 
-  const { clearFavorites, favoritesCount } = useLmsContext();
+
 
 
   return (
@@ -45,7 +45,6 @@ const CourseCard = React.memo(function CourseCard({
         >
           {isFavorite ? "❤️" : "♡"}
         </button>
-        <button onClick={clearFavorites}>🗑 Xóa tất cả ({favoritesCount})</button>
       </div>
     </div>
   );

@@ -15,5 +15,5 @@ function FeatureItem({ icon, number, title, subtitle, description }) {
   );
 }
 
-export default FeatureItem;
+export default  FeatureItem;
   

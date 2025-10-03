@@ -6,12 +6,14 @@ import { useLmsContext } from "./LmsContext";
 
 function Feature() {
 
-  const { query } = useLmsContext();
+   const { query } = useLmsContext();
+  const search = String(query || "").toLowerCase();
 
-  const filteredFeatures = features.filter((item)=>
-    item.subtitle.toLowerCase().includes(query.toLowerCase()) ||
-    item.description.toLowerCase().includes(query.toLowerCase())
-  );
+  const filteredFeatures = features.filter((item) => {
+    const subtitle = String(item?.subtitle || "").toLowerCase();
+    const description = String(item?.description || "").toLowerCase();
+    return subtitle.includes(search) || description.includes(search);
+  });
 
   return (
     <section className="feature">
