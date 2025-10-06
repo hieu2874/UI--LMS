@@ -33,17 +33,15 @@ function Banner() {
             <input
               type="text"
               className="banner-input"
-              placeholder="コース、講師、団体を検索…"
+              placeholder="コース、講師を検索"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
             />
-            <button className="button button--primary input-search ">検索</button>
           </form>
+          <button className="button button--primary input-search ">検索</button>
         </div>
       </div>
-      <div className="banner-image">
-        <img src="/image/Group 1000004723.png" alt="banner" />
-      </div>
+      <img src="/image/Group 1000004723.png" alt="banner" className="img-banner" />
     </section>
   );
 }
