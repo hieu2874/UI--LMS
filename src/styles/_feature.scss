@@ -1,54 +1,53 @@
 .feature {
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
-  padding: 40px 20px;
+  padding: 72px 168px;
   background-color: rgba(255, 255, 255, 1);
   &-block {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     justify-content: space-between;  
-    flex-wrap: wrap;
-    gap: 70px;
-}  
+    flex-wrap: wrap; 
+  }  
 }
 
 
 .feature-box {
- 
   background: #fff;
   transition: transform 0.2s ease;
-  
-  // &:hover {
-  //   transform: translateY(-5px);
-  // }
+  width: calc(25% - 36px); // 4 cột là 25% mỗi khoảng trắng là 48px có 3 khoảng trắng (48*3) / 4 sau đó lấy 25% - đi là đc//
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    transform: translateY(-5px);
+  }
 
   .icon img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 15px;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
   }
 
   h3 {
-    font-size: 28px;
+    font-size: 24px;
+    line-height: 30px;
     color: #333;
-    margin-bottom: 10px;
     font-weight: 700;
   }
 
   p {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
   }
 
   span {
     font-size: 14px;
-    color: #666;
-    line-height: 1.4;
+    font-weight: 400;
+    color: rgba(108, 117, 125, 1);
+    line-height: 22px;
     display: block;
   }
 }

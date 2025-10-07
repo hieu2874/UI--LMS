@@ -3,11 +3,11 @@
     {
       "id": 1,
       "author": "My Nguyen",
-      "title": "スポンジケーキを作る",
+      "title": "スポンジケーキを作",
       "description": "サンプルカテゴリ内",
       "time": "0時間30分",
       "date": "2025年7月18日",
-      "image": "/image/left6.png"
+      "image": "/image/left4.png"
     },
     {
       "id": 2,
@@ -30,6 +30,186 @@
     {
       "id": 4,
       "author": "Thanh Tu",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 5,
+      "author": "Thanh",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 6,
+      "author": "Tuan",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 7,
+      "author": "Tung",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 8,
+      "author": "Nguyen Doan",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 9,
+      "author": "Tu Vo",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 10,
+      "author": "Duc Anh",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 11,
+      "author": "Linh",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 12,
+      "author": "Phuc",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 13,
+      "author": "Hung Phan",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 14,
+      "author": "Hoang Phan",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 15,
+      "author": "Sang Sua",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+      {
+      "id": 16,
+      "author": "Hieu Ho",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+       {
+      "id": 17,
+      "author": "Hieu Ho",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+       {
+      "id": 18,
+      "author": "Hieu Ho",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+       {
+      "id": 19,
+      "author": "Hieu Ho",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+       {
+      "id": 20,
+      "author": "Hieu Ho",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+       {
+      "id": 21,
+      "author": "Hieu Ho",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+       {
+      "id": 22,
+      "author": "Hieu Ho",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+       {
+      "id": 23,
+      "author": "Hieu Ho",
+      "title": "クッキーを作る",
+      "description": "サンプルカテゴリ内",
+      "time": "0時間30分",
+      "date": "2025年7月17日",
+      "image": "/image/left4.png"
+    },
+       {
+      "id": 24,
+      "author": "Hieu Ho",
       "title": "クッキーを作る",
       "description": "サンプルカテゴリ内",
       "time": "0時間30分",

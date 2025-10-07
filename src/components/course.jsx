@@ -14,11 +14,7 @@ function Course() {
     setSelectedItem
   } = useLmsContext();
 
-
-
-  // luôn đảm bảo query là string
   const search = String(query).toLowerCase();
-
   const filteredCourses = courses.filter((course) => {
     const title = String(course?.title || "").toLowerCase();
     const description = String(course?.description || "").toLowerCase();
@@ -46,9 +42,9 @@ function Course() {
                 <CourseCard
                   {...course}
                   onClick={() => setSelectedItem(course)}
-                  isFavorite={favorites[`course-${course.id}`]} 
+                  isFavorite={favorites[`course-${course.id}`]}
                   toggleFavorite={() => toggleFavorite(course.id, "course")}
-                  
+
                 />
               </SwiperSlide>
             ))

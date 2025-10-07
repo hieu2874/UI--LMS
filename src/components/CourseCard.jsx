@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const CourseCard = React.memo(function CourseCard({
   id,
   title,
@@ -15,10 +14,7 @@ const CourseCard = React.memo(function CourseCard({
 }) {
   
   console.log("Render CourseCard:", id);
-
-
-
-
+  
   return (
     <div className={`course-card ${isFavorite ? "liked" : ""}`} onClick={onClick}>
       <div className="course-image">
@@ -28,16 +24,6 @@ const CourseCard = React.memo(function CourseCard({
         <p className="author">{author}</p>
         <h3>{title}</h3>
         <p> {description}</p>
-        <div className="date-time">
-          <div className="time">
-            <img src="/image/icon2.png" alt="" />
-            <span className="time">{time}</span>
-          </div>
-          <div className="date">
-            <img src="/image/icon1.png" alt="" />
-            <span className="date">{date}</span>
-          </div>
-        </div>
         <button
           onClick={(e) => { e.stopPropagation(); toggleFavorite(); }}
           className={isFavorite ? "liked" : ""}

@@ -6,7 +6,7 @@ import { useLmsContext } from "./LmsContext";
 
 function Feature() {
 
-   const { query } = useLmsContext();
+  const { query } = useLmsContext();
   const search = String(query || "").toLowerCase();
 
   const filteredFeatures = features.filter((item) => {

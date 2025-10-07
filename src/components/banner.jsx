@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLmsContext } from "./LmsContext";
-
 function Banner() {
-  const {query , setQuery} = useLmsContext();
+  const { query, setQuery } = useLmsContext();
   const [inputValue, setInputValue] = useState(query || "");
 
   useEffect(() => {

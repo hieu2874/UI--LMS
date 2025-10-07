@@ -9,7 +9,6 @@ function CourseDetail() {
   if (!course) {
     return <h2>Không tìm thấy khóa học</h2>;
   }
-
   return (
     <div className="course-detail">
       <h2>{course.title}</h2>

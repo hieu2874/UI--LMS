@@ -65,11 +65,11 @@
                         </div>
                         <div className="footers-bottom-right">
                             <span>
-                                <img src="./image/icon4.png" className="footers-bottom-icon" alt="phone" class="icon" />
+                                <img src="./image/icon4.png" className="footers-bottom-icon" alt="phone" className="icon" />
                                 098765432112
                             </span>
                             <span>
-                                <img src="./image/icon3.png" className="footers-bottom-icon" alt="email" class="icon" />
+                                <img src="./image/icon3.png" className="footers-bottom-icon" alt="email" className="icon" />
                                 info@gmail.com
                             </span>
                         </div>

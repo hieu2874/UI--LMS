@@ -3,27 +3,33 @@
   max-width: 100%;
   height: auto;
   display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
   flex-direction: column;
-  min-height: 516px;
-  padding: 40px 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 168px;
   &-block {
-    width: 100%;
-    height: auto;
+   width: 100%;
+   height: auto;
   }
-
+  &-box {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+  &-title {
+    color: rgba(9, 128, 183, 1);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+  }
   &-heading {
     font-size: 28px;
     font-weight: 700;
     color: rgba(1, 78, 114, 1);
-    margin-bottom: 20px;
   }
 
   &-list {
     overflow-x: auto;
-
     &::-webkit-scrollbar {
       height: 8px;
     }
@@ -33,8 +39,15 @@
       border-radius: 4px;
     }
   }
+  &-slide {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
 
   &-card {
+    width: calc(16.67% - 20px);
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -51,37 +64,13 @@
 
       img {
         width: 100%;
-        height: 150px;
+        height: 120px;
         object-fit: cover;
+        display: block;
       }
-
-      // .course-badge {
-      //   position: absolute;
-      //   top: 60%;
-      //   right: 10px;
-      //   padding: 4px 10px;
-      //   font-size: 12px;
-      //   border-radius: 12px;
-      //   font-weight: 600;
-
-      //   &.finished {
-      //     background: rgba(69, 182, 235, 1);
-      //     color: #fff;
-      //   }
-
-      //   &.offer {
-      //     background: rgba(255, 99, 71, 0.9);
-      //     color: #fff;
-      //   }
-      // }
-
       &-progress-bar {
         position: absolute;
-        top: 35%;
-        left: 50%;
         transform: translate(-50%, 0);
-        width: 90%;
-        height: 3px;
         background-color: rgba(206, 212, 218, 1);
         border-radius: 4px;
         margin: 5px auto;
@@ -102,13 +91,12 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 30px;
-      gap: 20px;
-
+      gap: 12px;
+      padding: 0 10px;
+      margin-top: 12px;
       h3 {
         font-size: 16px;
         font-weight: 700;
-        margin-bottom: 10px;
         line-height: 1.4;
         word-break: break-word;
       }
@@ -127,7 +115,6 @@
         font-weight: 500;
         color: rgba(73, 80, 87, 1);
         background-color: rgba(233, 236, 239, 1);
-        margin-bottom: 20px;
 
         &-list {
 
@@ -141,7 +128,6 @@
       .date-time {
         display: flex;
         justify-content: space-between;
-        gap: 55px;
         flex-direction: row;
       }
 
@@ -150,26 +136,23 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
       }
 
     }
   }
 }
 .swiper-wrapper {
-  margin-bottom: 60px;
-  gap: 52px;
+  margin-bottom: 50px;
 }
 .swiper-pagination-bullet {
-  width: 16px !important;
-  height: 16px !important;
+  width: 13px !important;
+  height: 13px !important;
   opacity: 0.4 !important;
-  border: 3px solid rgba(222, 226, 230, 1);
+  border: 2px solid rgba(222, 226, 230, 1);
   background-color: transparent !important;
-
   border-radius: 100%;
-
   transition: border-color 0.3s ease;
+  margin: 0 7px !important;
 }
 
 .swiper-pagination-bullet-active {
