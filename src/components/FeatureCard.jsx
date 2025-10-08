@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-function FeatureItem({ icon, number, subtitle, description }) {
+function FeatureCard({ icon, number, subtitle, description }) {
   
   return (
     <div className="feature-box">
@@ -14,5 +14,5 @@ function FeatureItem({ icon, number, subtitle, description }) {
   );
 }
 
-export default  FeatureItem;
+export default  FeatureCard;
   

@@ -1,7 +1,7 @@
 
 
 import { features } from "../data/features";
-import FeatureItem from "./featureItem";
+import FeatureCard from "./FeatureCard";
 import { useLmsContext } from "./LmsContext";
 
 function Feature() {
@@ -20,7 +20,7 @@ function Feature() {
       <div className="feature-block">
         {filteredFeatures.length > 0 ? (
           filteredFeatures.map((item) =>(
-            <FeatureItem key={item.id} {...item} />
+            <FeatureCard key={item.id} {...item} />
           ))
         ) : (
            <p>khong tim thay dich vu</p>
