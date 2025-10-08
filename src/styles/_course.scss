@@ -50,7 +50,7 @@
     width: calc(16.67% - 20px);
     background: #fff;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(27, 60, 108, 0.14);
     overflow: hidden;
     position: relative;
     transition: transform 0.2s ease;
@@ -161,31 +161,45 @@
 }
 @media screen and (max-width: 1200px) {
   .course {
-    padding: 10px;
+    padding: 40px 60px;
+  }
+  .course-card {
+    flex: 1 1 calc(33.33% - 20px);
   }
   .swiper {
     padding: 0 20px;
   }
 }
 @media (max-width: 992px) {
+  .course {
+    padding: 32px 40px;
+  }
+  .course-card {
+    flex: 1 1 calc(33.33% - 20px) 
+  }
   .course-card .course-info {
-    padding: 16px;
-    gap: 12px;
-
+    padding: 12px;
+    gap: 10px;
     h3 {
       font-size: 15px;
       margin-bottom: 8px;
     }
-    p.desc {
+    p {
       font-size: 13px;
     }
   }
 }
 
 @media (max-width: 768px) {
+  .course {
+    padding: 24px 20px;
+  }
+  .course-card {
+    flex: 1 1 calc(50% - 20px);
+  }
   .course-card .course-info {
-    padding: 12px;
-    gap: 10px;
+    padding: 10px;
+    gap: 8px;
 
     h3 {
       font-size: 14px;
@@ -197,9 +211,15 @@
 }
 
 @media (max-width: 576px) {
+  .course {
+    padding: 16px 10px;
+  }
+  .course-card {
+    flex: 1 1 100%;
+  }
   .course-card .course-info {
-    padding: 10px;
-    gap: 8px;
+    padding: 8px;
+    gap: 6px;
 
     h3 {
       font-size: 13px;

@@ -12,6 +12,9 @@
 
 .banner-info {
   flex:  1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 .img-banner {
@@ -25,7 +28,6 @@
   font-weight: 700;
   color: rgba(9, 128, 183, 1);
   line-height: 72px;
-  margin-bottom: 48px;
   span {
     display: block;
   }
@@ -35,7 +37,6 @@
   font-size: 18px;
   line-height: 26px;
   color: rgba(52, 58, 64, 1);
-  margin-bottom: 48px;
   font-weight: 500;
   letter-spacing: 0px;
   vertical-align: middle;
@@ -45,11 +46,11 @@
   width: 505px;
   height: 68px;
   display: flex;
-  align-items: center;
+  align-items: center;  
   justify-content: space-between;
   background: rgba(255, 255, 255, 1);
   border-radius: 50px;
-  padding: 12px 26px 12px 16px;
+  padding: 12px 24px 12px 16px;
   box-shadow: 0 2px 6px rgba(27, 60, 108, 0.16);
   border: 1px solid rgba(222, 226, 230, 1);
   .input-search {
@@ -71,35 +72,47 @@
 }
 
 
-@media screen and (max-width: 1024) {
+@media screen and (max-width: 1024px) {
   .banner {
     flex-direction: column;
-    text-align: center;
+    padding: 32;
 
     &-info {
       max-width: 100%;
+      align-items: center;
+      text-align: center;
     }
 
     &-heading {
-      font-size: 36px;
-      line-height: 44px;
+      font-size: 42px;
+      line-height: 52px;
+    }
+    &-desc {
+      font-size: 16px;
+      line-height: 24px;
+      padding: 0 12px;
+    }
+    &-search {
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 40px;
     }
 
     &-image {
-      max-width: 70%;
+      max-width: 80%;
       margin: 0 auto;
+      transform: none;
+      margin-top: 24px;
     }
   }
 }
 
-@media screen and (max-width: 683px) {
+@media screen and (max-width: 519px) {
   .banner {
-    flex-direction: column;
-    text-align: center;
     padding: 16px 24px;
 
     &-info {
-      max-width: 100%;
+      gap: 32px;
       margin-bottom: 24px;
     }
 
@@ -109,17 +122,19 @@
     }
 
     &-desc {
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 15px;
+      line-height: 22px;
     }
 
     &-search {
-      width: 100%;
+      flex-direction: row;
       height: 56px;
+      padding: 8px 16px;
+      width: 100%;
     }
 
     &-image {
-      max-width: 70%;
+      max-width: 100%;
       margin: 0 auto;
     }
   }

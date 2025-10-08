@@ -10,7 +10,6 @@ import "@fontsource/noto-sans-jp/700.css"; // thêm weight 700
 
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

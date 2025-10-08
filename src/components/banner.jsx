@@ -37,7 +37,12 @@ function Banner() {
               onChange={(e) => setInputValue(e.target.value)}
             />
           </form>
-          <button className="button button--primary input-search ">検索</button>
+          <button
+            className="button button--primary input-search "
+            onClick={handleSearch}
+          >
+            検索
+          </button>
         </div>
       </div>
       <img src="/image/Group 1000004723.png" alt="banner" className="img-banner" />

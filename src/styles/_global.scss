@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
 body {
@@ -39,11 +39,11 @@ ul {
 }
 
 .button {
-  display: inline-block;
+  display: inline-flex; /* Cho inline nút với nhau */
   align-items: center;
   justify-content: center;
-  padding: 8px 24px;
-  border-radius: 20px; 
+  text-align: center;
+  border-radius: 20px;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
@@ -53,32 +53,33 @@ ul {
     background-color: rgba(187, 233, 255, 1);
     color: rgba(69, 182, 235, 1);
     border: none;
-    padding: 10px 20px;
-  }
-
-  &:hover {
-    background-color: rgba(0, 123, 255, 0.2);
+    width: 96px;
+    height: 40px;
   }
 
   &--ourline {
     border: 1px solid rgba(222, 226, 230, 1);
     color: rgba(73, 80, 87, 1);
     background-color: white;
-     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(165, 141, 141, 0.16);
+    width: 120px;
+    height: 40px;
   }
 
   &--primary {
-
     border: 1px solid rgba(69, 182, 235, 1);
     background-color: rgba(69, 182, 235, 1);
     color: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 12px rgba(27, 60, 108, 0.14);
+    width: 120px;
+    height: 40px;
+
     &:hover {
       border: 1px solid rgba(27, 60, 108, 0.14);
     }
+
     &-input-search {
-      display: flex;
-      align-items: center;
-      text-align: center;
+      box-shadow: 0 4px 12px rgba(165, 141, 141, 0.16);
     }
   }
 }
@@ -94,4 +95,3 @@ ul {
 @import "newsletter";
 @import "footers";
 @import "modal";
-
